@@ -8,11 +8,11 @@
 .left{
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 30px;
 }
 
 .menuList{
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 30px;
 }

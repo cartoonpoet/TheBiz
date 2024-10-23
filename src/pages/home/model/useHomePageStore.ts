@@ -2,7 +2,7 @@ import {create} from "zustand";
 import {MenuType} from 'entities/menu/model/model'
 
 interface HomeState {
-    menuList: MenuType[]
+    menuList: string[]
 }
 
 const init = {
