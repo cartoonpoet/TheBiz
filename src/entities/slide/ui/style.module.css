@@ -1,0 +1,31 @@
+.swiper {
+    width: 100%;
+    margin-top: 50px;
+    height: 28dvh;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 40px;
+    box-shadow: 5px 5px 10px #a7a7a7;
+    height: 27dvh;
+}
+.slide1{
+    background-color: #ffe1e1;
+}
+.slide2{
+    background-color: #f0ecff;
+}
+.slide3{
+    background-color: #dcf5ec;
+}
+.slide4{
+    background-color: #d9e8f1;
+}
+

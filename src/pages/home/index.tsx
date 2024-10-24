@@ -1,9 +1,15 @@
 import React from "react";
 import Header from "../../widgets/header";
-import {useHomePageStore} from './model/useHomePageStore'
+import style from './style.module.css'
+import SearchSection from "../../widgets/searchSection";
 
 const Home = () => {
-    return <div><Header/></div>
+    return (
+        <div className={style.container}>
+            <Header/>
+            <SearchSection/>
+        </div>
+    )
 };
 
 export default Home

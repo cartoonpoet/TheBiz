@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff3dd;
+    padding: 50px 0;
+}
+.container .subTitle{
+    font-weight: 600;
+    font-size: 20px;
+}
+.container .title{
+    font-weight: bold;
+    font-size: 34px;
+}

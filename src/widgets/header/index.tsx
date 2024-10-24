@@ -1,12 +1,12 @@
 import React from "react";
-import style from './header.module.css'
+import style from './style.module.css'
 import Logo from '../../shared/ui/logo'
 import Menu from "../../entities/menu/ui";
 import {useHomePageStore} from 'pages/home/model/useHomePageStore'
 
 const Header = () => {
     const {menuList} = useHomePageStore();
-    console.log(menuList)
+
     return (
         <div className={style.wrapper}>
             <div className={style.left}>
