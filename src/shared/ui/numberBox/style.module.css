@@ -1,0 +1,10 @@
+.wrapper{
+    padding: 3px 18px;
+    background-color: #f0f0f3;
+    text-align: center;
+    font-size: 40px;
+    color: #ff7f0f;
+    border-radius: 10px;
+    box-shadow: -1px -1px 3px 1px rgba(0,0,0, 0.1);
+    font-weight: bold;
+}
