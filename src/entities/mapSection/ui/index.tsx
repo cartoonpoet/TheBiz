@@ -9,7 +9,7 @@ declare global {
     }
 }
 
-const TabSection = () => {
+const MapSection = () => {
     useEffect(() => {
         const mapContainer  = document.getElementById('map'), // 이미지 지도를 표시할 div
             mapOption  = {
@@ -44,4 +44,4 @@ const TabSection = () => {
     )
 };
 
-export default TabSection;
+export default MapSection;

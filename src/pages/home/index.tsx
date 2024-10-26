@@ -3,7 +3,7 @@ import Header from "../../widgets/header";
 import style from './style.module.css'
 import SearchSection from "../../widgets/searchSection";
 import TitleSection from "../../entities/titleSection/ui";
-import TabSection from "../../entities/tabSection/ui";
+import MapSection from "../../entities/mapSection/ui";
 
 const Home = () => {
     return (
@@ -11,7 +11,7 @@ const Home = () => {
             <Header/>
             <SearchSection/>
             <TitleSection/>
-            <TabSection/>
+            <MapSection/>
         </div>
     )
 };
