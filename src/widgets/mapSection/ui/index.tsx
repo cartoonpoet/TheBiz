@@ -3,7 +3,8 @@ import style from './style.module.css'
 import {center, location, overlay} from '../model/model'
 import './overlay.css'
 import Button from "../../../shared/ui/button";
-import TabGroup from 'shared/ui/tabGroup'
+import TabGroup from '../../../shared/ui/tabGroup'
+import {tab} from "../../../shared/model/tab";
 
 declare global {
     interface Window {
@@ -37,7 +38,7 @@ const MapSection = () => {
             <div className={style.left}>
                 <ul className={style.box}>
                     <li className={style.tab}>
-                        <TabGroup tab={['Tab1', 'Tab2', 'Tab3']} currentTab={0}/>
+                        <TabGroup tab={tab} currentTab={0}/>
                     </li>
                     <li className={style.title}>메인 섹션3 - Tab1</li>
                     <li className={style.describe}>스크롤이 섹션 상단에 닿았을 때</li>

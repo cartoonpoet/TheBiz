@@ -1,7 +1,7 @@
 import React from "react";
 import style from './style.module.css'
-import Search from "../../entities/search/ui";
-import Slide from "../../entities/slide/ui";
+import Search from "../../../entities/search/ui";
+import Slide from "../../../entities/slide/ui";
 const SearchSection = () => {
     return (
         <div className={style.container}>

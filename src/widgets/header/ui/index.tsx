@@ -1,7 +1,7 @@
 import React from "react";
 import style from './style.module.css'
-import Logo from '../../shared/ui/logo'
-import Menu from "../../entities/menu/ui";
+import Logo from '../../../shared/ui/logo'
+import Menu from "../../../entities/menu/ui";
 import {useHomePageStore} from 'pages/home/model/useHomePageStore'
 
 const Header = () => {
