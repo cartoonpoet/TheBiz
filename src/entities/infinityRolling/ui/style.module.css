@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 50dvh;
+    overflow: hidden;
+}
+
+.wrapper .up, .wrapper .down {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper .up .boxes, .wrapper .down .boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.wrapper .up .boxes{
+    animation: up 5s linear infinite;
+}
+
+.wrapper .down .boxes{
+    animation: down 5s linear infinite;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import style from './style.module.css'
 import TabGroup from "../../../shared/ui/tabGroup";
 import {tab} from "../../../shared/model/tab";
+import InfinityRolling from "../../../entities/infinityRolling/ui";
 
 const RollingSection = () => {
     return (
@@ -15,7 +16,9 @@ const RollingSection = () => {
                     <div className={style.describe}>배너 사이즈: 360*600</div>
                 </div>
             </li>
-            <li className={style.right}></li>
+            <li className={style.right}>
+                <InfinityRolling/>
+            </li>
         </ul>
     )
 };
