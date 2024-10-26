@@ -38,18 +38,6 @@ export const location = [
     }
 ]
 
-// 커스텀 오버레이에 표시할 내용입니다
-// HTML 문자열 또는 Dom Element 입니다
+
 export const overlay = (name: string) => `<div class ="speech-bubble">${name}</div>`;
 
-// 커스텀 오버레이가 표시될 위치입니다
-// const position = new window.kakao.maps.LatLng(33.450701, 126.570667);
-//
-// // 커스텀 오버레이를 생성합니다
-// const customOverlay = new kakao.maps.CustomOverlay({
-//     position: position,
-//     content: content
-// });
-//
-// // 커스텀 오버레이를 지도에 표시합니다
-// customOverlay.setMap(map);
