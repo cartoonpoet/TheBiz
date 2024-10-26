@@ -5,7 +5,7 @@ import useRollingNum from '../util/useRollingNum'
 
 const TitleSection = () => {
     const digits = useRollingNum();
-    console.log(digits)
+
     return (
         <div className={style.wrapper}>
             <div className={style.smallTitle}>메인 섹션 2</div>
