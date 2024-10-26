@@ -1,0 +1,7 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f3;
+    padding: 3px;
+    border-radius: 30px;
+}

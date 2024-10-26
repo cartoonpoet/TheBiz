@@ -1,0 +1,19 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: #ff951a;
+    color: white;
+}
+
+.deActive{
+    background-color: #f0f0f3;
+    color: #b6b6c2;
+}

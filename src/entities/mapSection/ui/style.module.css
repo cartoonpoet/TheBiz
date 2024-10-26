@@ -1,7 +1,6 @@
 .wrapper {
     display: flex;
     flex-direction: row;
-    flex: 1;
 }
 
 .wrapper .left {
@@ -9,8 +8,36 @@
     flex-direction: column;
     flex: 1;
     justify-content: center;
+    align-items: center;
+
+}
+.wrapper .left .box{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.wrapper .left .box .tab {
+    display: flex;
+}
+.wrapper .left .box .title{
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.wrapper .left .box .describe{
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -1px;
 }
 
+.wrapper .left .box .btnGroup{
+    display: flex;
+    margin-top: 14px;
+}
 .wrapper .right {
     flex: 1;
 }
