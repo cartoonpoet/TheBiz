@@ -12,7 +12,8 @@
     gap: 20px;
 }
 
-.wrapper .up .boxes, .wrapper .down .boxes{
+
+.wrapper .up .boxes, .wrapper .down .boxes {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -29,17 +30,17 @@
 
 @keyframes down {
     0% {
-        transform: translateY(-86%);
+        transform: translateY(-100%);
     }
     100% {
         transform: translateY(0%);
     }
 }
 
-.wrapper .up .boxes{
+.wrapper .up .boxes {
     animation: up 5s linear infinite;
 }
 
-.wrapper .down .boxes{
+.wrapper .down .boxes {
     animation: down 5s linear infinite;
 }
