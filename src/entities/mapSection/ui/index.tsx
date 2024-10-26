@@ -44,7 +44,7 @@ const MapSection = () => {
                     <li className={style.describe}>우측 이미지 지도 위 마커들이</li>
                     <li className={style.describe}>순차적으로 노출되도록 구현하세요.</li>
                     <li className={style.btnGroup}>
-                        <Button disabled={false}>초기화</Button>
+                        <Button disabled={false}>button</Button>
                     </li>
                 </ul>
             </div>
