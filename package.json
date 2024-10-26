@@ -1,5 +1,4 @@
 {
-  "homepage": "https://cartoonpoet.github.io/thebiz",
   "name": "thebiz",
   "version": "0.1.0",
   "private": true,
@@ -51,5 +50,6 @@
     "eslint": "^8.57.1",
     "gh-pages": "^6.2.0",
     "prettier": "3.3.3"
-  }
+  },
+  "homepage": "https://cartoonpoet.github.io/TheBiz"
 }
