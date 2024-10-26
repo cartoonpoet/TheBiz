@@ -9,6 +9,7 @@
 .wrapper .up, .wrapper .down {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .wrapper .up .boxes, .wrapper .down .boxes{
@@ -28,7 +29,7 @@
 
 @keyframes down {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-86%);
     }
     100% {
         transform: translateY(0%);
