@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/thebiz/static/css/main.666dd667.css",
+    "main.js": "/thebiz/static/js/main.16cf2f1f.js",
+    "static/js/453.b3a9ced1.chunk.js": "/thebiz/static/js/453.b3a9ced1.chunk.js",
+    "static/media/logo_ai.svg": "/thebiz/static/media/logo_ai.94505c4cae711ae80a8068648de98504.svg",
+    "static/media/icon_search_wh.svg": "/thebiz/static/media/icon_search_wh.f6420f31c8a5fd2e5793a1116b58d79a.svg",
+    "index.html": "/thebiz/index.html",
+    "main.666dd667.css.map": "/thebiz/static/css/main.666dd667.css.map",
+    "main.16cf2f1f.js.map": "/thebiz/static/js/main.16cf2f1f.js.map",
+    "453.b3a9ced1.chunk.js.map": "/thebiz/static/js/453.b3a9ced1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.666dd667.css",
+    "static/js/main.16cf2f1f.js"
+  ]
+}
