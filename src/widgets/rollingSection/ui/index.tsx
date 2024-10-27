@@ -1,18 +1,18 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import style from './style.module.css'
 import TabGroup from "../../../shared/ui/tabGroup";
-import {tab,} from "../../../shared/model/tab";
+import {tab} from "../../../shared/model/tab";
 import InfinityRolling from "../../../entities/infinityRolling/ui";
 
 interface Props {
-    sectionRefs: (el: any) => any;
+    // sectionRefs: (el: any) => any;
     scrollToSection: (index: number) => void
 }
 
 
-const RollingSection = ({sectionRefs, scrollToSection}: Props) => {
+const RollingSection = forwardRef<HTMLDivElement, Props>(({ scrollToSection}: Props, ref) => {
     return (
-        <div className={style.wrapper} ref={sectionRefs}>
+        <div className={style.wrapper} ref={ref}>
             <li className={style.left}>
                 <div className={style.box}>
                     <div className={style.tab}><TabGroup tab={tab} currentTab={1} scrollToSection={scrollToSection}/>
@@ -28,6 +28,7 @@ const RollingSection = ({sectionRefs, scrollToSection}: Props) => {
             </li>
         </div>
     )
-};
+});
 
+RollingSection.displayName = 'RollingSection'
 export default RollingSection

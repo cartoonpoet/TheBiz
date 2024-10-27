@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState, forwardRef} from "react";
 import style from './style.module.css'
 import {center, location, overlay} from '../model/model'
 import './overlay.css'
@@ -13,11 +13,14 @@ declare global {
 }
 
 interface Props {
-    sectionRefs: (el: any) => any;
+    // sectionRefs: React.Ref<HTMLDivElement>; // 수정된 부분
     scrollToSection: (index: number) => void
 }
 
-const MapSection = ({sectionRefs, scrollToSection}: Props) => {
+const MapSection = forwardRef<HTMLDivElement, Props>(({scrollToSection}: Props, ref) => {
+    const [lastScrollY, setLastScrollY] = useState<number>(0);
+    const overlayRef = useRef<any[]>([])
+
     useEffect(() => {
         const mapContainer = document.getElementById('map'), // 이미지 지도를 표시할 div
             mapOption = {
@@ -26,20 +29,43 @@ const MapSection = ({sectionRefs, scrollToSection}: Props) => {
             };
 
         const map = new window.kakao.maps.Map(mapContainer, mapOption);
+        const showMarkersSequentially = () => {
+            location.forEach((info, index) => {
+                setTimeout(() => {
+                    const position = new window.kakao.maps.LatLng(info.lat, info.lng);
+                    const newCustomOverlay = new window.kakao.maps.CustomOverlay({
+                        position,
+                        content: overlay(info.name),
+                        xAnchor: 0.5,
+                        yAnchor: 0.5
+                    });
+                    newCustomOverlay.setMap(map)
+                    overlayRef.current.push(newCustomOverlay)
+                }, index * 1000);
 
-        location.forEach(info => {
-            const position = new window.kakao.maps.LatLng(info.lat, info.lng);
-            const customOverlay = new window.kakao.maps.CustomOverlay({
-                position,
-                content: overlay(info.name),
-                xAnchor: 0.5,
-                yAnchor: 0.5
-            });
-            customOverlay.setMap(map)
-        })
+            })
+
+        };
+
+        const scrollEventListner = () => {
+            const scrollLocation = document.documentElement.scrollTop; // 현재 스크롤바 위치
+            const mapSectionLocation = document.getElementById('mapSection')!.offsetTop
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY) {
+                if (mapSectionLocation <= scrollLocation && overlayRef.current.length === 0)
+                    showMarkersSequentially(); // 아래로 스크롤 시 액션 호출
+            } else if (currentScrollY < lastScrollY) {
+                if (mapSectionLocation >= scrollLocation && overlayRef.current.length === 0)
+                    showMarkersSequentially(); // 위로 스크롤 시 액션 호출
+            }
+            setLastScrollY(currentScrollY);
+        }
+        window.addEventListener('scroll', scrollEventListner)
+        if(overlayRef.current.length === location.length) window.removeEventListener('scroll', scrollEventListner)
     }, []);
     return (
-        <div className={style.wrapper} ref={sectionRefs}>
+        <div className={style.wrapper} ref={ref} id={"mapSection"}>
             <div className={style.left}>
                 <ul className={style.box}>
                     <li className={style.tab}>
@@ -60,7 +86,7 @@ const MapSection = ({sectionRefs, scrollToSection}: Props) => {
 
         </div>
     )
-};
+});
 
 MapSection.displayName = 'MapSection'
 export default MapSection;
