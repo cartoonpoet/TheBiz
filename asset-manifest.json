@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/TheBiz/static/css/main.666dd667.css",
-    "main.js": "/TheBiz/static/js/main.02209031.js",
+    "main.css": "/TheBiz/static/css/main.c1135cb8.css",
+    "main.js": "/TheBiz/static/js/main.a523e8c7.js",
     "static/js/453.b3a9ced1.chunk.js": "/TheBiz/static/js/453.b3a9ced1.chunk.js",
     "static/media/logo_ai.svg": "/TheBiz/static/media/logo_ai.94505c4cae711ae80a8068648de98504.svg",
     "static/media/icon_search_wh.svg": "/TheBiz/static/media/icon_search_wh.f6420f31c8a5fd2e5793a1116b58d79a.svg",
     "index.html": "/TheBiz/index.html",
-    "main.666dd667.css.map": "/TheBiz/static/css/main.666dd667.css.map",
-    "main.02209031.js.map": "/TheBiz/static/js/main.02209031.js.map",
+    "main.c1135cb8.css.map": "/TheBiz/static/css/main.c1135cb8.css.map",
+    "main.a523e8c7.js.map": "/TheBiz/static/js/main.a523e8c7.js.map",
     "453.b3a9ced1.chunk.js.map": "/TheBiz/static/js/453.b3a9ced1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.666dd667.css",
-    "static/js/main.02209031.js"
+    "static/css/main.c1135cb8.css",
+    "static/js/main.a523e8c7.js"
   ]
 }
