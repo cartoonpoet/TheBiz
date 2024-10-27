@@ -8,6 +8,7 @@
     height: 50dvh;
     background-color: #f8f8f9;
     overflow: hidden;
+    margin: 0;
 }
 .wrapper .left, .wrapper .right{
     flex: 1;
