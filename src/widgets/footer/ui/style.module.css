@@ -1,0 +1,135 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 20dvh;
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+.container .top {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15dvw;
+}
+
+.line {
+    width: 100dvw;
+    background: #ccc;
+    border: 0;
+    height: 1px;
+}
+
+.halfLine {
+    width: 70dvw;
+    background: #ccc;
+    border: 0;
+    height: 0.5px;
+}
+
+.container .top .title {
+    font-weight: 500;
+}
+
+.container .top .subText {
+    font-weight: 200;
+}
+
+.container .middle {
+    display: flex;
+    flex-direction: row;
+    padding-left: 15dvw;
+    /*width: 60dvw;*/
+    gap: 16px;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container .middle .title {
+    font-weight: 500;
+    padding-top: 2px;
+}
+
+.container .middle .subInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container .middle .subInfo .phone {
+    color: #ff951a;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.container .middle .subInfo .businessHour {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.container .middle .partnerInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.container .middle .partnerInfo .title {
+    font-weight: 500;
+}
+
+.container .middle .partnerInfo .detailBox {
+    padding-top: 2px;
+}
+
+.container .middle .partnerInfo .detail {
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid #ccc;
+    gap: 3px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow {
+    transform: scaleY(-1);
+    width: 8px;
+}
+
+.container .bottom {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15dvw;
+}
+
+.container .bottom .menuGroup {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+    font-size: 10px;
+}
+
+.container .bottom .menuGroup .menu {
+    cursor: pointer;
+}
+.container .bottom .menuGroup .menu:nth-child(2n){
+    font-weight: bold;
+}
+.container .bottom .copyRight{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    font-size: 10px;
+    color: #8a8a8a;
+    width: 70dvw;
+    justify-content: space-between;
+}

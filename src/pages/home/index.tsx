@@ -6,6 +6,7 @@ import TitleSection from "../../widgets/titleSection/ui";
 import MapSection from "../../widgets/mapSection/ui";
 import RollingSection from "../../widgets/rollingSection/ui";
 import LastSection from "../../widgets/lastSection/ui";
+import Footer from '../../widgets/footer/ui'
 const Home = () => {
     return (
         <div className={style.container}>
@@ -15,6 +16,7 @@ const Home = () => {
             <MapSection/>
             <RollingSection/>
             <LastSection/>
+            <Footer/>
         </div>
     )
 };
