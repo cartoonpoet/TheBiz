@@ -12,7 +12,12 @@ declare global {
     }
 }
 
-const MapSection = () => {
+interface Props {
+    sectionRefs: (el: any) => any;
+    scrollToSection: (index: number) => void
+}
+
+const MapSection = ({sectionRefs, scrollToSection}: Props) => {
     useEffect(() => {
         const mapContainer = document.getElementById('map'), // 이미지 지도를 표시할 div
             mapOption = {
@@ -34,11 +39,11 @@ const MapSection = () => {
         })
     }, []);
     return (
-        <div className={style.wrapper}>
+        <div className={style.wrapper} ref={sectionRefs}>
             <div className={style.left}>
                 <ul className={style.box}>
                     <li className={style.tab}>
-                        <TabGroup tab={tab} currentTab={0}/>
+                        <TabGroup tab={tab} currentTab={0} scrollToSection={scrollToSection}/>
                     </li>
                     <li className={style.title}>메인 섹션3 - Tab1</li>
                     <li className={style.describe}>스크롤이 섹션 상단에 닿았을 때</li>
@@ -57,4 +62,5 @@ const MapSection = () => {
     )
 };
 
+MapSection.displayName = 'MapSection'
 export default MapSection;
