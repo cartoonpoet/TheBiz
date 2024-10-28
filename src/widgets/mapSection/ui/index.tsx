@@ -53,10 +53,10 @@ const MapSection = forwardRef<HTMLDivElement, Props>(({scrollToSection}: Props, 
             const currentScrollY = window.scrollY;
 
             if (currentScrollY > lastScrollY) {
-                if (mapSectionLocation <= scrollLocation && overlayRef.current.length === 0)
+                if (Math.abs(mapSectionLocation - scrollLocation) <= 30 && overlayRef.current.length === 0)
                     showMarkersSequentially(); // 아래로 스크롤 시 액션 호출
             } else if (currentScrollY < lastScrollY) {
-                if (mapSectionLocation >= scrollLocation && overlayRef.current.length === 0)
+                if (Math.abs(mapSectionLocation - scrollLocation) <= 30 && overlayRef.current.length === 0)
                     showMarkersSequentially(); // 위로 스크롤 시 액션 호출
             }
             setLastScrollY(currentScrollY);
