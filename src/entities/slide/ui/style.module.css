@@ -1,10 +1,64 @@
-.swiper {
-    width: 100%;
-    margin-top: 50px;
-    height: 28dvh;
+/* style.module.css */
+.container {
+    margin-top: 60px;
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    align-items: center; /* 중앙 정렬 */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px; /* 슬라이드 간의 간격 */
+    transition: transform 0.5s ease; /* 애니메이션 효과 추가 */
+}
+
+.wrapperClone {
+    gap: 30px; /* 슬라이드 간의 간격 */
+    margin-left: 30px; /* 슬라이드 간의 간격 */
+}
+
+.leftSwiper, .rightSwiper {
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.leftSwiper {
+    left: 10px;
+    transform: scaleX(-1);
+}
+
+.rightSwiper {
+    right: 10px;
+}
+
+@keyframes infiniteScroll1 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.1% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes infiniteScroll2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
 }
 
 .swiperSlide {
@@ -14,18 +68,22 @@
     font-weight: 500;
     font-size: 40px;
     box-shadow: 5px 5px 10px #a7a7a7;
-    height: 27dvh;
-}
-.slide1{
-    background-color: #ffe1e1;
-}
-.slide2{
-    background-color: #f0ecff;
-}
-.slide3{
-    background-color: #dcf5ec;
-}
-.slide4{
-    background-color: #d9e8f1;
+    width: 600px; /* 슬라이드의 너비 */
+    height: 30dvh;
 }
 
+.slide1 {
+    background-color: #ffe1e1;
+}
+
+.slide2 {
+    background-color: #f0ecff;
+}
+
+.slide3 {
+    background-color: #dcf5ec;
+}
+
+.slide4 {
+    background-color: #d9e8f1;
+}

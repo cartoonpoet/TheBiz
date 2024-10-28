@@ -1,34 +1,65 @@
 import 'swiper/css';
 import 'swiper/css/navigation';
-import {Navigation, Autoplay} from 'swiper/modules';
-import React from "react";
-import style from './style.module.css'
-import {Swiper, SwiperSlide} from 'swiper/react';
-import './buttonStyle.css'
-import cn from 'classnames'
+import React, {useEffect, useRef, useState} from "react";
+import style from './style.module.css';
+import './buttonStyle.css';
+import cn from 'classnames';
+import SwiperBtn from 'assets/image/swiper_btn.svg';
+
+const slidePx = 600;
+
+const text = [
+
+]
 
 const Slide = () => {
+    const swiperRef = useRef<HTMLDivElement>(null);
+    const [slideArray] = useState(new Array(4).fill('')); // 슬라이드 배열
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const createSlide = () => {
+        return slideArray.map((_, i) => (
+            <div key={i} className={cn(style.swiperSlide, style['slide' + (i + 1)])}>
+                Swiper banner {i + 1}<br/>무한 롤링 스와이퍼
+            </div>
+        ));
+    };
+
+    const handleNext = () => {
+        setCurrentSlide(prev => (prev + 1));
+    };
+
+    const handlePrev = () => {
+        setCurrentSlide(prev => (prev - 1));
+    };
+
+
+    useEffect(() => {
+        if (swiperRef.current) {
+            if (currentSlide < 0) {
+
+            }
+            if (swiperRef.current) {
+                swiperRef.current.style.transform = `translateX(-${(currentSlide)*slidePx}px)`
+            }
+        }
+    }, [currentSlide]);
 
     return (
-        <Swiper
-            style={{
-                '--swiper-navigation-color': 'black',
-            }}
-            slidesPerView={3}
-            spaceBetween={50}
-            autoplay={{delay: 4500, disableOnInteraction: false}}
-            loop
-            navigation
-            modules={[Navigation, Autoplay]}
-            className={style.swiper}
-        >
-            <SwiperSlide className={cn(style.swiperSlide, style.slide1)}>Swiper banner1<br/>무한 롤링 스와이퍼</SwiperSlide>
-            <SwiperSlide className={cn(style.swiperSlide, style.slide2)}>Swiper banner2<br/>무한 롤링 스와이퍼</SwiperSlide>
-            <SwiperSlide className={cn(style.swiperSlide, style.slide3)}>Swiper banner3<br/>무한 롤링 스와이퍼</SwiperSlide>
-            <SwiperSlide className={cn(style.swiperSlide, style.slide4)}>Swiper banner4<br/>무한 롤링 스와이퍼</SwiperSlide>
-        </Swiper>
-
-    )
+        <div className={style.container}>
+            <div className={style.leftSwiper}>
+                <img src={SwiperBtn} alt="왼쪽" onClick={handlePrev}/>
+            </div>
+            <div className={style.rightSwiper}>
+                <img src={SwiperBtn} alt="오른쪽" onClick={handleNext}/>
+            </div>
+            <div className={style.wrapper} ref={swiperRef}>
+                {createSlide()}
+                {createSlide()}
+                {createSlide()}
+            </div>
+        </div>
+    );
 };
 
-export default Slide
+export default Slide;
