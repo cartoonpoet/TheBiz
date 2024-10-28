@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useCallback, useEffect} from "react";
 import Header from "../../widgets/header/ui";
 import style from './style.module.css'
 import SearchSection from "../../widgets/searchSection/ui";
@@ -16,10 +16,11 @@ const Home = () => {
     const scrollToSection = (index: number) => {
         const refs = [mapSectionRef, rollingSectionRef, lastSectionRef]
         refs[index].current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
+            behavior: "smooth",
+            block: "start",
+        });
     };
+
 
     return (
         <div className={style.container}>

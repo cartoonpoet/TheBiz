@@ -52,13 +52,11 @@ const MapSection = forwardRef<HTMLDivElement, Props>(({scrollToSection}: Props, 
             const mapSectionLocation = document.getElementById('mapSection')!.offsetTop
             const currentScrollY = window.scrollY;
 
-            if (currentScrollY > lastScrollY) {
-                if (Math.abs(mapSectionLocation - scrollLocation) <= 30 && overlayRef.current.length === 0)
-                    showMarkersSequentially(); // 아래로 스크롤 시 액션 호출
-            } else if (currentScrollY < lastScrollY) {
-                if (Math.abs(mapSectionLocation - scrollLocation) <= 30 && overlayRef.current.length === 0)
-                    showMarkersSequentially(); // 위로 스크롤 시 액션 호출
+            if(Math.abs(mapSectionLocation - scrollLocation) <= 30){
+                document.getElementById('mapSection')?.scrollIntoView({ behavior: 'smooth', block: 'start'})
+                if(overlayRef.current.length === 0) showMarkersSequentially();
             }
+
             setLastScrollY(currentScrollY);
         }
         window.addEventListener('scroll', scrollEventListner)
