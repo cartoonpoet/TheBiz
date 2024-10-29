@@ -50,13 +50,7 @@ const MapSection = forwardRef<HTMLDivElement, Props>(({scrollToSection}: Props, 
             const section = document.querySelector('#mapSection')!.getBoundingClientRect();
             const { top } = section;
 
-            if (Math.abs(top - 60) <= 40 && Math.abs(top - 60) >= 0) {
-                if(typeof ref !== "function") {
-                    window.scrollTo({
-                        top: ref!.current!.offsetTop - 60,
-                        behavior: 'smooth',
-                    });
-                }
+            if (Math.abs(top - 60) <= 30 && Math.abs(top - 60) >= 0) {
                 if (overlayRef.current.length === 0 ) showMarkersSequentially();
             }
         };

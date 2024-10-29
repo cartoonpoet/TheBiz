@@ -3,7 +3,7 @@ import style from './style.module.css'
 import Card from "../../../shared/ui/card";
 import cx from 'classnames'
 
-const cardCount = 7; // 카드 개수
+const cardCount = 7;
 const InfinityRolling = () => {
     const cards = new Array(cardCount).fill('')
 

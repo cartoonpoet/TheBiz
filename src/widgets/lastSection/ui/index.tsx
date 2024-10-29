@@ -5,7 +5,6 @@ import {tab} from "../../../shared/model/tab";
 import Button from "../../../shared/ui/button";
 
 interface Props {
-    // sectionRefs: (el: any) => any;
     scrollToSection: (index: number) => void
 }
 

@@ -8,12 +8,19 @@
     cursor: pointer;
 }
 
-.active{
+.selected{
     background-color: #ff951a;
     color: white;
 }
 
-.deActive{
+.notSelected{
     background-color: #f0f0f3;
     color: #b6b6c2;
+}
+
+.active{
+    font-weight: bold;
+}
+.deActive{
+    font-weight: 100;
 }
