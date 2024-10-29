@@ -21,26 +21,26 @@
 
 @keyframes up {
     0% {
-        transform: translateY(0%);
+        transform: translateY(50%);
     }
     100% {
-        transform: translateY(-100%);
+        transform: translateY(-50%);
     }
 }
 
 @keyframes down {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-50%);
     }
     100% {
-        transform: translateY(0%);
+        transform: translateY(50%);
     }
 }
 
 .wrapper .up .boxes {
-    animation: up 5s linear infinite;
+    animation: up 7s linear infinite;
 }
 
 .wrapper .down .boxes {
-    animation: down 5s linear infinite;
+    animation: down 7s linear infinite;
 }
