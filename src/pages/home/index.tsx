@@ -1,4 +1,4 @@
-import React, {useRef, useCallback, useEffect} from "react";
+import React, {useRef} from "react";
 import Header from "../../widgets/header/ui";
 import style from './style.module.css'
 import SearchSection from "../../widgets/searchSection/ui";
@@ -13,14 +13,20 @@ const Home = () => {
     const mapSectionRef = useRef<HTMLDivElement>(null)
     const rollingSectionRef = useRef<HTMLDivElement>(null)
     const lastSectionRef = useRef<HTMLDivElement>(null)
-    const scrollToSection = (index: number) => {
-        const refs = [mapSectionRef, rollingSectionRef, lastSectionRef]
-        refs[index].current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    };
+    const headerHeight = 60; // 헤더 높이 설정 (px)
 
+    const scrollToSection = (index: number) => {
+        const refs = [mapSectionRef, rollingSectionRef, lastSectionRef];
+        const targetRef = refs[index].current;
+
+        if (targetRef) {
+            const targetPosition = targetRef.getBoundingClientRect().top + window.scrollY - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
         <div className={style.container}>

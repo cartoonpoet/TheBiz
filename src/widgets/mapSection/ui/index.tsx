@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, forwardRef} from "react";
+import React, {useEffect, useRef,  forwardRef} from "react";
 import style from './style.module.css'
 import {center, location, overlay} from '../model/model'
 import './overlay.css'
@@ -13,19 +13,18 @@ declare global {
 }
 
 interface Props {
-    // sectionRefs: React.Ref<HTMLDivElement>; // 수정된 부분
     scrollToSection: (index: number) => void
 }
 
 const MapSection = forwardRef<HTMLDivElement, Props>(({scrollToSection}: Props, ref) => {
-    const [lastScrollY, setLastScrollY] = useState<number>(0);
     const overlayRef = useRef<any[]>([])
 
     useEffect(() => {
-        const mapContainer = document.getElementById('map'), // 이미지 지도를 표시할 div
+        const mapContainer = document.getElementById('map'),
             mapOption = {
                 center: new window.kakao.maps.LatLng(center.lat, center.lng),
-                level: 6 // 이미지 지도의 확대 레벨
+                level: 6,
+                draggable: false
             };
 
         const map = new window.kakao.maps.Map(mapContainer, mapOption);
@@ -47,20 +46,22 @@ const MapSection = forwardRef<HTMLDivElement, Props>(({scrollToSection}: Props, 
 
         };
 
-        const scrollEventListner = () => {
-            const scrollLocation = document.documentElement.scrollTop; // 현재 스크롤바 위치
-            const mapSectionLocation = document.getElementById('mapSection')!.offsetTop
-            const currentScrollY = window.scrollY;
+        const scrollEventListener = () => {
+            const section = document.querySelector('#mapSection')!.getBoundingClientRect();
+            const { top } = section;
 
-            if(Math.abs(mapSectionLocation - scrollLocation) <= 30){
-                document.getElementById('mapSection')?.scrollIntoView({ behavior: 'smooth', block: 'start'})
-                if(overlayRef.current.length === 0) showMarkersSequentially();
+            if (Math.abs(top - 60) <= 40 && Math.abs(top - 60) >= 0) {
+                if(typeof ref !== "function") {
+                    window.scrollTo({
+                        top: ref!.current!.offsetTop - 60,
+                        behavior: 'smooth',
+                    });
+                }
+                if (overlayRef.current.length === 0 ) showMarkersSequentially();
             }
-
-            setLastScrollY(currentScrollY);
-        }
-        window.addEventListener('scroll', scrollEventListner)
-        if(overlayRef.current.length === location.length) window.removeEventListener('scroll', scrollEventListner)
+        };
+        window.addEventListener('scroll', scrollEventListener)
+        if (overlayRef.current.length === location.length) window.removeEventListener('scroll', scrollEventListener)
     }, []);
     return (
         <div className={style.wrapper} ref={ref} id={"mapSection"}>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TheBiz/static/css/main.f74ed310.css",
-    "main.js": "/TheBiz/static/js/main.5d246760.js",
+    "main.css": "/TheBiz/static/css/main.3b5931ec.css",
+    "main.js": "/TheBiz/static/js/main.285778b2.js",
     "static/js/453.b3a9ced1.chunk.js": "/TheBiz/static/js/453.b3a9ced1.chunk.js",
     "static/media/logo_thebiz.svg": "/TheBiz/static/media/logo_thebiz.76296c08d310dc3fd946d1a81f1a4711.svg",
     "static/media/logo_ai.svg": "/TheBiz/static/media/logo_ai.94505c4cae711ae80a8068648de98504.svg",
@@ -9,12 +9,12 @@
     "static/media/swiper_btn.svg": "/TheBiz/static/media/swiper_btn.c80ddb49dadc99071525f6df5dad6248.svg",
     "index.html": "/TheBiz/index.html",
     "static/media/icon_arrow_down_bk.svg": "/TheBiz/static/media/icon_arrow_down_bk.0098d2d142019a1299724af7526ca4f7.svg",
-    "main.f74ed310.css.map": "/TheBiz/static/css/main.f74ed310.css.map",
-    "main.5d246760.js.map": "/TheBiz/static/js/main.5d246760.js.map",
+    "main.3b5931ec.css.map": "/TheBiz/static/css/main.3b5931ec.css.map",
+    "main.285778b2.js.map": "/TheBiz/static/js/main.285778b2.js.map",
     "453.b3a9ced1.chunk.js.map": "/TheBiz/static/js/453.b3a9ced1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f74ed310.css",
-    "static/js/main.5d246760.js"
+    "static/css/main.3b5931ec.css",
+    "static/js/main.285778b2.js"
   ]
 }
